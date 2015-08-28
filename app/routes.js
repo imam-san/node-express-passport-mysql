@@ -62,6 +62,16 @@ module.exports = function(app, passport) {
 		});
 	});
 
+
+	// =====================================
+	// Web Qr  =========================
+	// =====================================
+	// we will want this protected so you have to be logged in to visit
+	// we will use route middleware to verify this (the isLoggedIn function)
+	app.get('/test', function(req, res) {
+     	res.render('/test.ejs', { message: req.flash('test') })
+	});
+
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
